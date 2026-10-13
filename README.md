@@ -10,9 +10,6 @@ npm run build      # production build in /dist
 npm run preview
 ```
 
-## Documentation
-`doc.md` records the plan and the implementation of the structure refactor: audit, decisions, phases, before/after, how to verify, and how to maintain each part.
-
 ## Quality checks
 ```bash
 npm run lint           # ESLint (React + hooks rules)
