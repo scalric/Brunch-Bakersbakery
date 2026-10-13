@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { TESTIMONIALS } from "@/data/constants";
-
+ 
 // TESTIMONIALS are placeholder reviews (see data/constants.js): swap in real ones before launch.
 // All quotes sit in the same grid cell and only fade, so the section keeps the height of the longest quote
 // and nothing below it (the footer included) moves when the review changes.
@@ -9,25 +9,25 @@ export default function Testimonials() {
   const touchX = useRef(null);
   const n = TESTIMONIALS.length;
   const go = (k) => setI(((k % n) + n) % n);
-
+ 
   const onKeyDown = (e) => {
     if (e.key === "ArrowRight") { e.preventDefault(); go(i + 1); }
     if (e.key === "ArrowLeft") { e.preventDefault(); go(i - 1); }
   };
   const onTouchEnd = (e) => {
-    if (touchX.current == null) return;
+    if (touchX.current === null) return;
     const dx = e.changedTouches[0].clientX - touchX.current;
     touchX.current = null;
     if (Math.abs(dx) > 48) go(dx < 0 ? i + 1 : i - 1);
   };
-
+ 
   return (
     <section className="sec testi" aria-labelledby="testi-title">
       <div className="sec-in">
         <header className="sec-head">
           <h2 id="testi-title">Testimonials</h2>
         </header>
-
+ 
         <div role="region" aria-roledescription="carousel" aria-label="Customer reviews">
           <div
             className="testi-stage"
@@ -56,7 +56,7 @@ export default function Testimonials() {
               );
             })}
           </div>
-
+ 
           <div className="testi-dots">
             {TESTIMONIALS.map((t, k) => (
               <button key={t[1]} type="button" className={k === i ? "on" : ""} onClick={() => go(k)} aria-label={`Show review ${k + 1} of ${n}`} aria-current={k === i ? "true" : undefined} />

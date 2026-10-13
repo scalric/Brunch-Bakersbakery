@@ -7,8 +7,8 @@ import EnquiryForm from "@/components/franchise/EnquiryForm";
 import WhyBrunch from "@/components/franchise/WhyBrunch";
 import "@/styles/franchise.css";
 import useDocumentTitle from "@/hooks/useDocumentTitle";
-
-
+ 
+ 
 const IMG = "/franchise/storefront";
 const STRIP = [
   ["Investment Range", SNAPSHOT[0].value, "Illustrative estimate"],
@@ -16,13 +16,13 @@ const STRIP = [
   [SNAPSHOT[2].label, SNAPSHOT[2].value, SNAPSHOT[2].note],
   [SNAPSHOT[3].label, SNAPSHOT[3].value, SNAPSHOT[3].note],
 ];
-
+ 
 export default function Franchise() {
   useDocumentTitle("Franchise Opportunities");
   // "Discuss these numbers" on the calculator page sends the estimate here through the router state
   const { state, key } = useLocation();
   const prefill = useMemo(() => (state?.budget ? { text: state.budget, id: key } : null), [state, key]);
-
+ 
   return (
     <div className="fr-page">
       {/* Hero: the real storefront is the background; copy sits on a restrained cocoa gradient at the left */}
@@ -31,7 +31,7 @@ export default function Franchise() {
           <picture>
             <source type="image/avif" srcSet={`${IMG}-828.avif 828w, ${IMG}-1280.avif 1280w, ${IMG}-1932.avif 1932w`} sizes="100vw" />
             <source type="image/webp" srcSet={`${IMG}-828.webp 828w, ${IMG}-1280.webp 1280w, ${IMG}-1932.webp 1932w`} sizes="100vw" />
-            <img src={`${IMG}-1932.webp`} alt="The Brunch Bakers storefront: a cream awning with the Brunch Bakers Pure Veg Bakery sign above an open shopfront filled with cakes and fresh bakes" width="1932" height="814" fetchpriority="high" decoding="async" />
+            <img src={`${IMG}-1932.webp`} alt="The Brunch Bakers storefront: a cream awning with the Brunch Bakers Pure Veg Bakery sign above an open shopfront filled with cakes and fresh bakes" width="1932" height="814" fetchPriority="high" decoding="async" />
           </picture>
         </div>
         <div className="fr-hero-in">
@@ -46,10 +46,10 @@ export default function Franchise() {
           </div>
         </div>
       </section>
-
+ 
       {/* Why Brunch Bakers: statement, figures and four image cards, straight under the hero */}
       <WhyBrunch />
-
+ 
       {/* Investor trust strip: figures come from data/franchise.js and stay labelled as estimates */}
       <section className="fr-strip" aria-label="Franchise at a glance">
         <div className="fr-strip-wrap">
@@ -69,7 +69,7 @@ export default function Franchise() {
           </ul>
         </div>
       </section>
-
+ 
       {/* Joining process */}
       <section className="sec fr-beige fr-process" id="process" aria-labelledby="proc-title">
         <div className="sec-in">
@@ -107,7 +107,7 @@ export default function Franchise() {
           </ol>
         </div>
       </section>
-
+ 
       {/* Support */}
       <section className="sec fr-cocoa fr-dark fr-support-sec" id="support" aria-labelledby="sup-title">
         <div className="sec-in">
@@ -126,7 +126,7 @@ export default function Franchise() {
           </ul>
         </div>
       </section>
-
+ 
       <Faq />
       <EnquiryForm prefill={prefill} />
     </div>

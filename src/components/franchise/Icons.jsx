@@ -1,6 +1,6 @@
 // One outline icon family (24px grid, 1.7 stroke) for the whole Franchise page.
 const base = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": "true", focusable: "false" };
-
+ 
 const PATHS = {
   wallet: <><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H18a2 2 0 0 1 2 2v2" /><path d="M3 7.5V17a2 2 0 0 0 2 2h14a1 1 0 0 0 1-1v-3" /><path d="M21 9h-4a2 2 0 0 0 0 4h4V9Z" /></>,
   area: <path d="M4 9V5a1 1 0 0 1 1-1h4M20 9V5a1 1 0 0 0-1-1h-4M4 15v4a1 1 0 0 0 1 1h4M20 15v4a1 1 0 0 1-1 1h-4" />,
@@ -14,7 +14,6 @@ const PATHS = {
   headset: <><path d="M4 14v-2a8 8 0 0 1 16 0v2" /><rect x="3" y="14" width="4" height="6" rx="1.5" /><rect x="17" y="14" width="4" height="6" rx="1.5" /></>,
   form: <><rect x="8" y="3" width="8" height="4" rx="1.5" /><path d="M8 5H6.5A1.5 1.5 0 0 0 5 6.5v13A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 17.5 5H16M9 12h6M9 16h4" /></>,
   chat: <path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 20.5l1.6-5.3A8.5 8.5 0 1 1 21 11.5ZM8.5 10.5h7M8.5 13.5h4" />,
-  pin: <><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></>,
   doc: <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5ZM14 3v5h5M9 14.5l2 2 4-4" />,
   store: <path d="M4 9.5 5.5 4h13L20 9.5M4 9.5a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0M5 12v8h14v-8M10 20v-4.5h4V20" />,
   plus: <path d="M12 5v14M5 12h14" />,
@@ -29,7 +28,7 @@ const PATHS = {
   menu: <><path d="M6 3v7a2 2 0 0 0 2 2v9M10 3v7a2 2 0 0 1-2 2M8 3v5M17 21V3c-2 1.5-3 4-3 7s1 4 3 4" /></>,
   calc: <><rect x="5" y="3" width="14" height="18" rx="2" /><path d="M8.5 7.5h7M9 12h.01M12 12h.01M15 12h.01M9 16h.01M12 16h.01M15 16h.01" /></>,
 };
-
+ 
 export default function Icon({ name, size = 22 }) {
   return <svg {...base} width={size} height={size}>{PATHS[name]}</svg>;
 }
