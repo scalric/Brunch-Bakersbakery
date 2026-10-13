@@ -1,0 +1,76 @@
+/* ===== Global tokens, type scale, buttons ===== */
+:root{
+  /* brand palette (the only colours used on the site) */
+  --cocoa:#2A1C17;--raspberry:#D80008;--raspberry-deep:#B00006;
+  --butter:#F4D35E;--pistachio:#A8C686;--mint-white:#F3F6EC;
+  --muted:rgba(42,28,23,.72);--line:rgba(42,28,23,.12);
+  /* form errors: one red for every error message and field outline (passes contrast on white and cream) */
+  --error:#A4262C;--error-soft:#FBE9EA;
+  /* two font families: Fraunces for headings, Inter for everything else */
+  --font-display:"Fraunces",Georgia,serif;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  /* type scale: H1 lives in hero.css (44-74px) */
+  --fs-h2:clamp(30px,3.6vw,46px);
+  --fs-h3:clamp(18px,1.6vw,21px);
+  --fs-body:clamp(16px,1.15vw,18px);
+  --fs-small:15px;
+  /* spacing */
+  --gutter:clamp(16px,3.2vw,48px);
+  --section-y:clamp(56px,7vw,96px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:calc(var(--hdr-stuck) + 16px)}
+#main{display:flow-root}   /* stops the first/last child's margin merging with the header's, so the header's scroll-shrink can't shift the page */
+body{margin:0;font-family:var(--font-body);font-size:var(--fs-body);color:var(--cocoa);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--raspberry);outline-offset:3px}
+h2,.page-title{text-align:center;font-family:var(--font-display);font-weight:600;font-size:var(--fs-h2);line-height:1.1;letter-spacing:-.015em;margin:44px 0 20px;color:var(--cocoa)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--gutter)}
+.center{text-align:center}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:200;padding:12px 18px;border-radius:999px;background:var(--cocoa);color:#fff;font-size:14px;font-weight:600;transition:top .2s ease}
+.skip:focus{top:12px}
+
+/* buttons: one height, radius and type style everywhere.
+   .btn.dark = primary (raspberry), .btn = secondary (cocoa outline) */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 30px;border-radius:999px;
+  border:1.5px solid var(--cocoa);background:transparent;color:var(--cocoa);
+  font-family:var(--font-body);font-size:14px;font-weight:700;line-height:1;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+  transition:background-color .25s ease,color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+.btn:hover{background:var(--cocoa);color:var(--mint-white)}
+.btn.dark{background:var(--raspberry);border-color:var(--raspberry);color:#fff}
+.btn.dark:hover{background:var(--raspberry-deep);border-color:var(--raspberry-deep);color:#fff;transform:translateY(-1px);box-shadow:0 12px 22px -12px rgba(216,0,8,.75)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.link{background:none;border:0;color:var(--raspberry);font-weight:700;margin-top:14px;text-decoration:underline}
+
+/* Menu page grid (unchanged layout) */
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.prod{border:1px solid var(--line);border-radius:14px;padding:12px;transition:.2s}
+.prod:hover{box-shadow:0 8px 22px #4a2c1d22;transform:translateY(-3px)}
+.pimg{aspect-ratio:1;display:grid;place-items:center;font-size:70px;background:var(--mint-white);border-radius:10px;overflow:hidden}
+.pimg img{display:block;width:100%;height:100%;object-fit:cover}
+.prod h3{font-size:14px;margin:10px 0 6px;min-height:40px}
+.prow{display:flex;justify-content:space-between;align-items:center}
+.prow button{background:var(--cocoa);color:#fff;border:0;border-radius:8px;padding:7px 16px;min-height:40px;font-weight:600}
+
+/* ui */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--cocoa);color:#fff;padding:10px 22px;border-radius:30px;z-index:99}
+.overlay{position:fixed;inset:0;background:#0007;display:grid;place-items:center;z-index:100;padding:16px}
+.modal{background:#fff;border-radius:16px;padding:26px;width:100%;max-width:400px;display:flex;flex-direction:column;gap:12px}
+.modal h3{margin:0;color:var(--cocoa)}
+.modal form{display:flex;flex-direction:column;gap:12px}
+.modal input{padding:12px;border:1px solid var(--line);border-radius:10px;font:inherit}
+
+
+/* responsive */
+@media(max-width:1024px){.products{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.products{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.products{gap:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* shown only while a lazily loaded route is first fetched */
+.route-loading{min-height:60vh;display:grid;place-items:center;color:var(--muted);font-size:var(--fs-small)}

@@ -1,0 +1,93 @@
+/* ===== Hero: full-width video with the copy on the left ===== */
+
+.hero{
+  --gutter:clamp(16px,3.2vw,48px);
+  position:relative;overflow:hidden;background:var(--bb-mint);color:var(--bb-cocoa);font-family:var(--font-body);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;
+}
+.hero a{text-decoration:none}
+.hero :focus-visible{outline:2px solid var(--bb-cocoa);outline-offset:3px}
+
+.hero-inner{
+  position:relative;z-index:2;pointer-events:none;
+  display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:center;column-gap:clamp(32px,4.4vw,80px);
+  max-width:1520px;margin:0 auto;box-sizing:border-box;
+  min-height:clamp(560px,56vw,min(900px,calc(100svh - var(--hdr-full))));   /* photos are 16:9, so height follows width until the viewport runs out */
+  padding:clamp(40px,6vh,72px) var(--gutter) clamp(72px,9vh,96px);
+}
+.hero-copy{pointer-events:auto}
+
+/* copy */
+.hero-copy{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.hero-eyebrow{
+  display:flex;align-items:center;gap:12px;margin:0 0 20px;line-height:1.2;
+  font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(42,28,23,.9);
+}
+.hero-eyebrow::before{content:"";width:32px;height:2px;border-radius:2px;background:var(--bb-pistachio)}
+.hero-title{
+  margin:0 0 28px -.03em;color:var(--bb-cocoa);   /* -.03em: optical left edge flush with the eyebrow rule */
+  font-family:var(--font-display);font-weight:700;font-size:clamp(44px,4.4vw,68px);line-height:1.06;letter-spacing:-.025em;font-optical-sizing:auto;text-wrap:balance;
+}
+.hero-sub{max-width:36ch;margin:0 0 32px;font-size:clamp(16px,1.35vw,20px);line-height:1.65;color:rgba(42,28,23,.92);text-wrap:pretty}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-meta{margin:24px 0 0;line-height:1.4;font-size:14px;font-weight:500;letter-spacing:.03em;color:rgba(42,28,23,.88)}
+
+.hero-btn{
+  display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 clamp(18px,1.8vw,24px);box-sizing:border-box;line-height:1;
+  margin:0;-webkit-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent;
+  border:1.5px solid var(--bb-cocoa);border-radius:999px;background:transparent;color:var(--bb-cocoa);cursor:pointer;
+  font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;
+  transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.hero-btn:active{transform:translateY(0);box-shadow:none}
+.hero-btn.primary{background:var(--bb-rasp);border-color:var(--bb-rasp);color:#fff}
+.hero-btn.primary:hover,.hero-btn.primary:focus-visible{background:var(--bb-rasp-deep);border-color:var(--bb-rasp-deep);transform:translateY(-1px);box-shadow:0 10px 20px -12px rgba(216,0,8,.7)}
+.hero-btn.outline:hover,.hero-btn.outline:focus-visible{background:var(--bb-cocoa);color:var(--bb-mint);transform:translateY(-1px)}
+.hero-btn:focus-visible{outline:2px solid var(--bb-cocoa);outline-offset:3px}
+
+
+@media (min-width:861px){
+  .hero-eyebrow,.hero-title,.hero-sub,.hero-meta,.hero-btn.outline{transition:color .6s ease,border-color .6s ease,background-color .2s ease}
+  .hero.is-dark .hero-eyebrow,.hero.is-dark .hero-title,.hero.is-dark .hero-sub,.hero.is-dark .hero-meta{color:var(--bb-mint)}
+  .hero.is-dark .hero-meta{color:rgba(243,246,236,.8)}
+  .hero.is-dark .hero-btn.outline{border-color:var(--bb-mint);color:var(--bb-mint)}
+  .hero.is-dark .hero-btn.outline:hover,.hero.is-dark .hero-btn.outline:focus-visible{background:var(--bb-mint);color:var(--bb-cocoa)}
+  /* the photos run from dark chocolate to pink, olive and navy behind the copy, so a soft dark fade from the left
+     edge keeps the light text readable on every slide; it is gone before the cake */
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(90deg,rgba(26,13,9,.74) 0,rgba(26,13,9,.58) 30%,rgba(26,13,9,.2) 48%,rgba(26,13,9,0) 60%);
+  }
+  .hero.is-dark :focus-visible{outline-color:var(--bb-mint)}
+}
+
+/* video: full-bleed behind the copy */
+.hero-bg{position:absolute;inset:0;overflow:hidden;background:#1a0d09}
+.hero-video{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+}
+
+/* narrow two-column widths: the two labels no longer fit side by side, so stack them at equal width */
+@media (min-width:861px) and (max-width:1040px){
+  .hero-ctas{display:grid;grid-template-columns:max-content}
+}
+
+/* tablet + phone: copy first on mint, then the photo edge to edge */
+@media (max-width:860px){
+  .hero-inner{grid-template-columns:1fr;min-height:0;pointer-events:auto;padding:28px var(--gutter) 28px}
+  .hero-title{font-size:clamp(42px,12vw,72px);margin-bottom:18px}
+  .hero-eyebrow{margin-bottom:14px}
+  .hero-sub{margin-bottom:26px}
+  .hero-meta{display:none}
+  .hero-bg{position:relative;inset:auto;aspect-ratio:4/5}
+}
+@media (max-width:560px){
+  .hero-inner{padding-top:24px}
+  .hero-sub br{display:none}
+  .hero-ctas{flex-direction:column;width:100%;gap:12px}
+  .hero-btn{width:100%;height:44px}
+  .hero-bg{aspect-ratio:9/12}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-btn,.hero-eyebrow,.hero-title,.hero-sub,.hero-meta{transition:none}
+  .hero-btn.primary:hover,.hero-btn.primary:focus-visible,.hero-btn.outline:hover,.hero-btn.outline:focus-visible,.hero-btn:active{transform:none}
+}

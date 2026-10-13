@@ -1,0 +1,178 @@
+/* ===== Homepage sections below the hero: one rhythm, one palette ===== */
+:root{
+  --cream:#FBF6EC;                 /* warm neutral surface */
+  --pistachio-soft:#E7F0DC;        /* light pistachio tint for panels */
+  --cream-warm:#F8F1E7;            /* testimonials and Our Story */
+  --mint-pale:#E8EFDF;             /* statistics band */
+  --line-strong:rgba(42,28,23,.22);
+  --shadow-sm:0 1px 2px rgba(42,28,23,.05),0 14px 28px -22px rgba(42,28,23,.38);
+  --shadow-md:0 2px 4px rgba(42,28,23,.06),0 26px 44px -24px rgba(42,28,23,.5);
+}
+.sec{padding:var(--section-y) var(--gutter);background:#fff;color:var(--cocoa);font-family:var(--font-body)}
+.sec.mint{background:var(--mint-white)}
+.sec.cream{background:var(--cream)}
+.sec-in{max-width:1200px;margin:0 auto}
+.sec-head{max-width:640px;margin:0 auto clamp(32px,5vw,52px);text-align:center}
+.sec .sec-head h2,.sec h2{margin:0}
+.sec-lead{margin:14px 0 0;font-size:var(--fs-body);line-height:1.6;color:var(--muted)}
+.kicker{margin:0 0 14px;font-family:var(--font-body);font-size:13px;font-weight:700;letter-spacing:.16em;line-height:1.3;text-transform:uppercase;color:var(--raspberry)}
+
+/* shared carousel dots (promos + testimonials) */
+.promo-dots,.testi-dots{display:flex;justify-content:center;align-items:center;gap:10px}
+.promo-dots button,.testi-dots button{position:relative;width:8px;height:8px;padding:0;border:0;border-radius:999px;background:rgba(42,28,23,.2);transition:background-color .25s ease}
+.promo-dots button::before,.testi-dots button::before{content:"";position:absolute;inset:-18px -4px}
+.promo-dots button:hover,.testi-dots button:hover{background:rgba(42,28,23,.45)}
+.promo-dots button.on,.testi-dots button.on{background:var(--cocoa)}
+
+/* --- promos: offer cards --- */
+.promo-track{list-style:none;display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:4px;padding:6px 4px 26px;margin:0 -4px;scrollbar-width:none;overscroll-behavior-x:contain;border-radius:28px}
+.promo-track::-webkit-scrollbar{display:none}
+.promo{
+  flex:0 0 calc((100% - 40px)/3);scroll-snap-align:start;display:flex;flex-direction:column;align-items:flex-start;
+  padding:30px 28px 28px;border-radius:24px;background:#fff;box-shadow:var(--shadow-sm);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.promo:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.promo-amount{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(34px,2.9vw,44px);line-height:1.1;text-transform:uppercase;color:var(--cocoa)}
+.promo-desc{margin:8px 0 26px;font-size:var(--fs-body);color:var(--muted)}
+.promo-btn{
+  display:inline-flex;align-items:center;justify-content:center;height:46px;max-width:100%;padding:0 22px;margin-top:auto;
+  border:1.5px solid var(--cocoa);border-radius:999px;background:transparent;color:var(--cocoa);
+  font-family:var(--font-body);font-size:14px;font-weight:700;line-height:1;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+  transition:background-color .25s ease,color .25s ease;
+}
+.promo-btn:hover,.promo-btn.copied{background:var(--cocoa);color:var(--mint-white)}
+
+/* --- testimonials: one quote at a time, all stacked in one grid cell so the height never changes --- */
+.sec.testi{background:var(--cream-warm);padding-block:clamp(44px,5.5vw,72px)}
+.testi .sec-head{margin-bottom:clamp(24px,3.5vw,36px)}
+.testi-stage{display:grid;max-width:820px;margin:0 auto;text-align:center;border-radius:12px}
+.testi-stage:focus-visible{outline-offset:10px}
+.testi-slide{
+  grid-area:1/1;margin:0;display:flex;flex-direction:column;align-items:center;
+  opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s linear .4s;
+}
+.testi-slide.is-on{opacity:1;visibility:visible;transition-delay:0s}
+.testi-slide blockquote{margin:0}
+.testi-slide blockquote p{margin:0;font-family:var(--font-display);font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.4;text-wrap:balance;color:var(--cocoa)}
+.testi-slide figcaption{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:22px;font-size:var(--fs-small);color:var(--muted)}
+.testi-slide figcaption b{font-size:var(--fs-body);font-weight:600;color:var(--cocoa)}
+.testi-dots{margin-top:24px}
+
+/* --- numbers: open row, no boxes, on a pale mint band --- */
+.sec.numbers{background:var(--mint-pale);padding-block:clamp(40px,5vw,64px)}
+.numbers-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.num-card{padding:8px 16px;text-align:center}
+.num-card+.num-card{border-left:1px solid var(--line)}
+.num-card b{display:block;font-family:var(--font-display);font-weight:700;font-size:clamp(36px,4.4vw,56px);line-height:1.1;font-variant-numeric:tabular-nums;color:var(--cocoa)}
+.num-card b::after{content:"";display:block;width:28px;height:2px;margin:12px auto 10px;border-radius:2px;background:var(--pistachio)}
+.num-card span{display:block;font-size:var(--fs-small);font-weight:500;color:var(--muted)}
+
+/* --- franchise CTA: compact two-column panel, copy left, photo right --- */
+.sec.fstrip{padding-block:clamp(40px,5vw,72px)}
+.fstrip-panel{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);overflow:hidden;border-radius:28px;background:var(--pistachio-soft);border:1px solid rgba(42,28,23,.08)}
+.fstrip-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(32px,5vw,64px)}
+.fstrip-copy h2{margin:0 0 16px;text-align:left;font-size:clamp(28px,3.1vw,42px);line-height:1.12}
+.fstrip-text{margin:0 0 28px;max-width:42ch;font-size:var(--fs-body);color:var(--muted)}
+.fstrip-media{position:relative;min-height:320px}
+.fstrip-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:46% 50%}
+
+/* --- find a bakery --- */
+.findstore-in{text-align:center}
+.findstore .btn{margin-top:30px}
+
+/* --- footer: white, editorial. City strip, then brand | newsletter | links | contact, then a one-line about and legal row --- */
+.site-foot{background:#fff;border-top:1px solid var(--line);color:var(--cocoa);font-family:var(--font-body);font-size:var(--fs-small)}
+.foot-body{padding:0 var(--gutter) 28px}
+.foot-in{max-width:1400px;margin:0 auto}
+.site-foot ul{list-style:none;margin:0;padding:0}
+
+/* city strip */
+.foot-cities{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px clamp(18px,2.4vw,40px);padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--line)}
+.foot-cities li{font-size:13px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.foot-cities i{display:inline-block;width:5px;height:5px;margin-left:.3em;background:var(--raspberry);vertical-align:baseline}
+
+.foot-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(0,.9fr) minmax(0,.9fr) minmax(0,1.2fr);gap:clamp(28px,3.4vw,56px);padding:clamp(36px,4.4vw,56px) 0}
+.site-foot h3{margin:0 0 20px;font-family:var(--font-body);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cocoa)}
+.foot-lead{margin:0;max-width:34ch;font-size:clamp(16px,1.2vw,18px);line-height:1.6;font-weight:300;color:var(--muted)}
+
+/* brand column, closed off by a hairline like the reference */
+.foot-brand{padding-right:clamp(20px,2.6vw,40px);border-right:1px solid var(--line)}
+.foot-brand img{display:block;width:170px;max-width:100%;height:auto}
+.foot-order{display:inline-flex;align-items:center;gap:6px;margin:28px 0 8px;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cocoa);transition:color .2s ease}
+.foot-order svg{color:var(--raspberry)}
+.foot-order:hover{color:var(--raspberry)}
+
+/* newsletter */
+.foot-nl-row{display:flex;max-width:420px;margin-top:24px;border:1px solid var(--line)}
+.foot-nl-row.bad{border-color:var(--error)}
+.foot-nl-row input{flex:1;min-width:0;height:60px;padding:0 20px;border:0;border-radius:0;background:#fff;font:inherit;font-size:16px;color:var(--cocoa)}
+.foot-nl-row input::placeholder{color:rgba(42,28,23,.5)}
+.foot-nl-row input:focus-visible{outline:2px solid var(--raspberry);outline-offset:-2px}
+.foot-nl-row button{display:grid;place-items:center;flex:none;width:60px;border:0;border-radius:0;background:var(--cocoa);color:#fff;transition:background-color .2s ease}
+.foot-nl-row button:hover{background:var(--raspberry)}
+.foot-fine,.foot-err{display:block;max-width:420px;margin-top:14px;font-size:13px;line-height:1.55;color:var(--muted)}
+.foot-err{margin-top:8px;color:var(--error);font-weight:500}
+.foot-done{max-width:420px;margin-top:24px;padding:18px 20px;border:1px solid var(--line);outline:0}
+.foot-done p{margin:0 0 6px;font-weight:600}
+.foot-done small{display:block;margin-bottom:10px;font-size:13px;color:var(--muted)}
+.foot-done button{padding:0;border:0;border-bottom:1.5px solid var(--raspberry);background:none;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cocoa)}
+
+/* link columns */
+.foot-col a{display:flex;align-items:center;min-height:44px;padding:6px 0;font-size:clamp(16px,1.2vw,18px);font-weight:300;color:var(--cocoa);transition:color .2s ease}
+.foot-col a:hover{color:var(--raspberry)}
+
+/* contact */
+.foot-touch{display:inline-flex;align-items:center;gap:12px;margin-top:24px;height:60px;padding:0 28px;border:1px solid var(--cocoa);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cocoa);transition:background-color .2s ease,color .2s ease}
+.foot-touch svg{color:var(--raspberry);transition:color .2s ease,transform .2s ease}
+.foot-touch:hover{background:var(--cocoa);color:#fff}
+.foot-touch:hover svg{color:#fff;transform:translateX(3px)}
+.foot-follow{margin:36px 0 12px}
+.socials{display:flex;flex-wrap:wrap;gap:4px 24px}
+.socials a{display:inline-flex;align-items:center;gap:10px;min-height:44px;color:var(--cocoa);transition:color .25s ease}
+.socials a:hover{color:var(--raspberry)}
+.socials svg{width:22px;height:22px}
+.socials em{font-style:normal;font-size:clamp(16px,1.2vw,18px);font-weight:300}
+
+/* about line and legal row */
+.foot-about{margin:0;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:clamp(15px,1.15vw,17px);font-weight:300;line-height:1.6;color:var(--muted)}
+.foot-about b{font-weight:600;color:var(--cocoa)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px 32px;flex-wrap:wrap;margin-top:28px}
+.foot-bottom p{margin:0;font-size:13px;color:var(--muted)}
+.foot-legal{display:flex;flex-wrap:wrap;gap:4px 32px}
+.foot-legal a,.foot-legal .soon{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--muted)}
+.foot-legal a{transition:color .2s ease}
+.foot-legal a:hover{color:var(--raspberry)}
+.foot-legal .soon{color:rgba(42,28,23,.5)}
+
+/* --- tablet / phone --- */
+@media (max-width:1180px){
+  .foot-main{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:40px}
+  .foot-brand{grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px;padding:0 0 28px;border-right:0;border-bottom:1px solid var(--line)}
+  .foot-order{margin:0}
+  .foot-news{grid-column:1 / -1}
+  .foot-contact{grid-column:auto}
+}
+@media (max-width:900px){
+  .promo{flex-basis:calc((100% - 20px)/2)}
+  .numbers-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}
+  .num-card:nth-child(3){border-left:0}
+  .fstrip-panel{grid-template-columns:minmax(0,1fr)}
+  .fstrip-media{min-height:0;aspect-ratio:16/9}
+}
+@media (max-width:560px){
+  .promo{flex-basis:86%;padding:24px}
+  .fstrip-panel{border-radius:22px}
+  .fstrip-copy .btn{width:100%}
+  .foot-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px}
+  .foot-contact{grid-column:1 / -1}
+  .foot-cities{justify-content:flex-start}
+  .foot-cities li{font-size:12px;letter-spacing:.18em}
+  .foot-touch{width:100%;justify-content:space-between}
+  .foot-nl-row{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .promo,.promo-btn,.promo-dots button,.testi-dots button,.testi-slide,.socials a,.foot-col a,.foot-order,.foot-nl-row button,.foot-touch,.foot-touch svg,.foot-legal a{transition:none}
+  .foot-touch:hover svg{transform:none}
+  .promo:hover{transform:none}
+}

@@ -1,0 +1,46 @@
+/* ===== "Why Brunch Bakers": light heading row, big two-line statement, figures as ruled rows (on the franchise page, under the hero) ===== */
+.wb{background:#fff;color:var(--cocoa);font-family:var(--font-body);padding:clamp(56px,7vw,104px) var(--gutter)}
+.wb-in{max-width:1240px;margin:0 auto}
+.wb-head{display:flex;align-items:center;gap:clamp(16px,3vw,40px);margin-bottom:clamp(36px,5vw,72px)}
+.wb-head h2{margin:0;text-align:left;font-family:var(--font-body);font-weight:300;font-size:clamp(26px,3.6vw,48px);line-height:1.1;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;color:var(--cocoa)}
+.wb-rule{flex:1;height:1px;background:rgba(42,28,23,.14)}
+.wb-tag{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--raspberry);white-space:nowrap}
+.wb-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,6vw,96px);align-items:start}
+.wb-big{margin:0;font-weight:800;font-size:clamp(34px,5.4vw,76px);line-height:1;letter-spacing:-.01em;text-transform:uppercase;color:var(--cocoa)}
+.wb-big span{display:block;margin-top:.04em;font-weight:300;color:var(--raspberry)}
+.wb-big i{display:inline-block;width:.14em;height:.14em;min-width:6px;min-height:6px;margin-left:.08em;background:var(--raspberry)}
+.wb-lead{margin:clamp(0px,1vw,12px) 0 0;max-width:34em;font-size:clamp(15px,1.3vw,19px);font-weight:400;letter-spacing:.12em;line-height:1.55;text-transform:uppercase;color:var(--cocoa)}
+.wb-dash{display:block;width:44px;height:2px;margin:22px 0 clamp(28px,3.4vw,44px);background:var(--raspberry);opacity:.8}
+.wb-stats{margin:0}
+.wb-row{display:grid;grid-template-columns:clamp(110px,11vw,150px) minmax(0,1fr);align-items:center;gap:0 24px;padding:14px 0;border-top:1px solid rgba(42,28,23,.12)}
+.wb-row:last-child{border-bottom:1px solid rgba(42,28,23,.12)}
+.wb-row dt{margin:0;font-weight:200;font-size:clamp(34px,3.6vw,52px);line-height:1.1;letter-spacing:-.01em;color:var(--raspberry)}
+.wb-row dd{margin:0;font-size:clamp(15px,1.25vw,18px);font-weight:300;line-height:1.45;color:var(--cocoa)}
+@media (max-width:860px){.wb-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){
+  .wb-head{flex-wrap:wrap;gap:8px 16px}
+  .wb-rule{display:none}
+  .wb-head h2{white-space:normal}
+  .wb-row{grid-template-columns:96px minmax(0,1fr);gap:0 16px}
+}
+
+/* four image cards: every card gets the same side padding, and the list is pulled out by that amount,
+   so all four columns (and their images) are exactly the same width while the text still lines up with the page edge */
+.wb-cards{--wb-pad:clamp(16px,2vw,32px);list-style:none;margin:clamp(48px,6vw,88px) calc(var(--wb-pad) * -1) 0;padding:clamp(28px,3vw,44px) 0 0;border-top:1px solid rgba(42,28,23,.12);display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.wb-card{padding:0 var(--wb-pad);border-left:1px solid rgba(42,28,23,.12)}
+.wb-card:first-child{border-left:0}
+.wb-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;background:var(--mint-white)}
+.wb-card h3{margin:22px 0 0;font-family:var(--font-body);font-size:clamp(13px,1.1vw,15px);font-weight:600;letter-spacing:.14em;line-height:1.35;text-transform:uppercase;color:var(--cocoa)}
+.wb-card-rule{display:block;width:28px;height:1px;margin:18px 0;background:var(--raspberry)}
+.wb-card p{margin:0;font-size:clamp(15px,1.25vw,17px);font-weight:300;line-height:1.55;color:var(--muted)}
+/* the cards on their own (investment calculator page): no heading above, so no divider or extra gap */
+.wb-solo{padding-block:clamp(40px,5vw,72px)}
+.wb-solo .wb-cards{margin-top:0;padding-top:0;border-top:0}
+@media (max-width:1024px){
+  .wb-cards{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px}
+  .wb-card:nth-child(odd){border-left:0}
+}
+@media (max-width:560px){
+  .wb-cards{--wb-pad:0px;grid-template-columns:minmax(0,1fr)}
+  .wb-card{border-left:0}
+}

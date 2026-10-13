@@ -1,0 +1,45 @@
+/* ===== Our Signatures: four editorial category tiles ===== */
+.sig{background:var(--bb-mint);color:var(--bb-cocoa);font-family:var(--font-body);padding:var(--section-y) var(--gutter)}
+.sig-inner{max-width:1120px;margin:0 auto}
+
+.sig-head{text-align:center;margin:0 auto clamp(32px,5vw,56px)}
+.sig-eyebrow{
+  display:inline-flex;align-items:center;gap:12px;margin:0 0 14px;
+  font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(42,28,23,.75);
+}
+.sig-eyebrow::before,.sig-eyebrow::after{content:"";width:28px;height:2px;border-radius:2px;background:var(--bb-pistachio)}
+.sig .sig-head h2{
+  margin:0 0 12px;text-align:center;color:var(--bb-cocoa);
+  font-family:var(--font-display);font-weight:600;font-size:var(--fs-h2);line-height:1.1;letter-spacing:-.015em;
+}
+.sig-sub{margin:0;font-size:var(--fs-body);color:var(--muted)}
+
+.sig-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,2.6vw,36px)}
+
+.sig-card{
+  display:flex;flex-direction:column;overflow:hidden;border-radius:24px;background:#fff;color:inherit;text-decoration:none;
+  box-shadow:0 18px 40px -28px rgba(42,28,23,.4);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.sig-card:hover{transform:translateY(-4px);box-shadow:0 26px 44px -26px rgba(42,28,23,.45)}
+.sig-card:focus-visible{outline:2px solid var(--bb-rasp);outline-offset:4px}
+
+.sig-media{overflow:hidden;aspect-ratio:5/4;background:#e4ecd6}
+.sig-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s ease;user-select:none}
+.sig-card:hover .sig-media img{transform:scale(1.03)}
+
+.sig-body{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:clamp(20px,2.2vw,28px) clamp(22px,2.4vw,32px) clamp(22px,2.4vw,30px)}
+.sig-body h3{margin:0 0 6px;font-size:var(--fs-h3);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bb-cocoa)}
+.sig-body p{margin:0;font-size:var(--fs-small);line-height:1.5;color:var(--muted)}
+.sig-arrow{display:grid;flex:none;color:var(--bb-rasp);transition:transform .25s ease}
+.sig-card:hover .sig-arrow,.sig-card:focus-visible .sig-arrow{transform:translateX(5px)}
+
+@media (max-width:680px){
+  .sig-grid{grid-template-columns:1fr;gap:22px}
+  .sig-media{aspect-ratio:4/3.4}
+  .sig-card{border-radius:22px}
+}
+@media (prefers-reduced-motion:reduce){
+  .sig-card,.sig-media img,.sig-arrow{transition:none}
+  .sig-card:hover,.sig-card:hover .sig-media img{transform:none}
+}
