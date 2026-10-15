@@ -8,9 +8,9 @@ import sandwiches from "@/assets/signature/sandwiches.webp";
 // name = tile title, cat = category the Menu page opens on, img = 5:4 photo (swap files in assets/signature to change)
 const CARDS = [
   { name: "Cakes", cat: "Cakes", line: "Made for every celebration.", img: cakes, alt: "Chocolate drip cake on a marble stand" },
-  { name: "Desserts", cat: "Desserts", line: "Little indulgences, big smiles.", img: desserts, alt: "Layered chocolate dessert topped with white chocolate swirls" },
-  { name: "Pizza", cat: "Pizza", line: "Hot, cheesy and freshly baked.", img: pizza, alt: "Slice of cheese pizza with a long cheese pull" },
-  { name: "Sandwiches", cat: "Sandwiches", line: "Fresh, filling everyday favourites.", img: sandwiches, alt: "Veg sandwich with lettuce and peppers" },
+  { name: "Desserts", cat: "Desserts", line: "Little indulgences, big smiles.", img: desserts, alt: "Layered chocolate mousse pastry with a glossy ganache top" },
+  { name: "Pizza", cat: "Pizza", line: "Hot, cheesy and freshly baked.", img: pizza, alt: "Veg pizza slice lifted with a long cheese pull" },
+  { name: "Sandwiches", cat: "Sandwiches", line: "Fresh, filling everyday favourites.", img: sandwiches, alt: "Grilled veg sandwich with lettuce and peppers" },
 ];
 
 const Arrow = () => (
@@ -33,7 +33,7 @@ export default function Categories() {
           {CARDS.map(({ name, cat, line, img, alt }) => (
             <Link key={name} to={`/products?cat=${encodeURIComponent(cat)}`} className="sig-card">
               <div className="sig-media">
-                <img src={img} alt={alt} width="600" height="480" sizes="(max-width: 680px) 92vw, 560px" loading="lazy" decoding="async" draggable="false" />
+                <img src={img} alt={alt} width="1000" height="800" sizes="(max-width: 680px) 92vw, 560px" loading="lazy" decoding="async" draggable="false" />
               </div>
               <div className="sig-body">
                 <div>

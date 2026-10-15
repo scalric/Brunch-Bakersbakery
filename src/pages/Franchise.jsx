@@ -87,7 +87,7 @@ export default function Franchise() {
                 </div>
                 {step.image?.src ? (
                   <div className="fr-j-media">
-                    <img src={step.image.src} alt={step.image.alt} width="840" height="525" loading="lazy" decoding="async" />
+                    <img src={step.image.src} alt={step.image.alt} width="1120" height="700" loading="lazy" decoding="async" />
                   </div>
                 ) : step.image ? (
                   <div className="fr-j-media">

@@ -59,7 +59,7 @@ export default function ValueProps({ showCta = true, asPage = false }) {
             <img
               className="ourstory-photo"
               src={photo}
-              alt="A glossy chocolate mirror-glaze cake with dark chocolate triangles on a cream ceramic plate, with chocolate shards floating above against a cocoa-brown silk backdrop"
+              alt="A marbled cream and chocolate mirror-glaze cake topped with chocolate triangles on a cream plate, with chocolate pieces floating above against a caramel silk backdrop"
               width="1122"
               height="1402"
               loading="lazy"

@@ -55,7 +55,7 @@ export const MILESTONES = [
       "Brunch Bakers is no longer just a neighbourhood bakery: the brand states a new ambition.",
     ],
     pics: [
-      [storefront2020, "A Brunch Bakers store with its red wordmark sign, glowing display counter and wall shelves of baked goods", "land"],
+      [storefront2020, "A cream Brunch Bakers storefront with a red wordmark sign, open wooden doors, pastry-filled windows and cafe tables outside", "land"],
     ],
   },
   {
@@ -68,8 +68,8 @@ export const MILESTONES = [
     pics: [
       [qutub2021, "The Qutub Minar and its gardens in Delhi under a blue sky", "sq", "50% 50%"],
       [brownie2021, "A stack of fudgy chocolate brownies with glossy chocolate sauce pouring over them on a dark plate", "sq", "50% 40%"],
-      [cake2021, "A square layered chocolate and vanilla mousse cake with chocolate garnish", "sq", "50% 50%"],
-      [spread2021, "A Brunch Bakers menu on a marble table among croissants, madeleines and a cappuccino", "sq", "40% 50%"],
+      [cake2021, "A square layered chocolate and vanilla mousse cake with a white chocolate curl and chocolate garnish", "sq", "50% 50%"],
+      [spread2021, "A Brunch Bakers hardcover book on a marble table among croissants, madeleines, berries and a cappuccino", "sq", "40% 50%"],
     ],
   },
   {
@@ -80,10 +80,10 @@ export const MILESTONES = [
       "Teams, kitchens and systems scale up. Recipes and standards stay exactly the same.",
     ],
     pics: [
-      [rebar2023, "Steel reinforcement laid across a huge indoor hall floor as a new production space is built", "r43", "50% 50%"],
+      [rebar2023, "Two workers in high-visibility vests on steel reinforcement laid across the floor of a large industrial hall", "r43", "50% 50%"],
       [card2023, "The Brunch Bakers wordmark in cream on a red background, with the Pure Veg Bakery mark", "r43", "50% 50%"],
       [logo2023, "The Brunch Bakers script logo in red with the Pure Veg Bakery mark", "r43 fit"],
-      [interior2023, "A bright Brunch Bakers store with wood slat walls, shelving, a counter and cafe seating", "r43", "65% 50%"],
+      [interior2023, "A cream Brunch Bakers storefront with a red wordmark sign, open wooden doors and pastry-filled windows", "r43", "50% 50%"],
     ],
   },
   {
@@ -94,8 +94,8 @@ export const MILESTONES = [
       "Brunch Bakers earns its place as a name people look for, and keeps raising the bar.",
     ],
     pics: [
-      [storefront2025, "A cream Brunch Bakers storefront with a red wordmark on the awning, pastry shelves in the windows and cafe stools outside", "pano"],
-      [cookies2025, "A stack of chocolate chip cookies", "land fit tight"],
+      [storefront2025, "A cream Brunch Bakers storefront with a red wordmark sign, open wooden doors, pastry-filled windows and cafe tables outside", "pano"],
+      [cookies2025, "A stack of chocolate chunk cookies with a broken one oozing melted chocolate", "land fit tight"],
     ],
   },
   {
@@ -106,8 +106,8 @@ export const MILESTONES = [
       "Pure veg, baked fresh, and now growing across more cities than ever.",
     ],
     pics: [
-      [counter2026, "A Brunch Bakers store with a glowing red sign, a glass display counter of baked goods and pendant lights", "", "50% 20%"],
-      [cake2026, "A slice of black forest cake with cherries, whipped cream and chocolate shards on a dark plate", "", "50% 50%"],
+      [counter2026, "A cream Brunch Bakers storefront with a red wordmark sign and open wooden doors showing the bakery inside", "", "50% 50%"],
+      [cake2026, "A slice of layered chocolate cherry cake topped with glossy cherries and chocolate pieces on a dark plate", "", "50% 50%"],
     ],
   },
   {
@@ -153,8 +153,8 @@ export const MAP_PINS = [
   Four numbered steps, each with one photo and a one-line caption. [image, alt text, caption, optional crop "x% y%"].
 */
 export const PROCESS_STEPS = [
-  ["The Idea", idea, "A white cake with diagonal ridges, a chocolate drip and a tall white chocolate flame on top", "A craving, a flavour, a challenge.", "50% 20%"],
-  ["The Trials", trials, "A baker smoothing a layered cream cake with floury hands on a wooden bench", "Test batches, small tweaks, useful failures.", "50% 65%"],
-  ["The Finish", finish, "A chef placing a caramel shard on a swirl of cream over a small layered dessert", "Every last detail is placed by hand.", "55% 50%"],
-  ["The Series", series, "Chocolate cupcakes topped with swirls of white and chocolate cream on a white cake stand", "From our kitchen to every store.", "50% 50%"],
+  ["The Idea", idea, "A pink cake with diagonal ridges and a red glaze drip, topped with a tall pink chocolate flame", "A craving, a flavour, a challenge.", "50% 50%"],
+  ["The Trials", trials, "A baker's hands smoothing the top of a cocoa-cream layer cake on a wooden bench", "Test batches, small tweaks, useful failures.", "50% 50%"],
+  ["The Finish", finish, "A chef placing a chocolate shard on a swirl of mousse over a small layered chocolate dessert", "Every last detail is placed by hand.", "50% 50%"],
+  ["The Series", series, "Chocolate cupcakes topped with swirls of cream and chocolate frosting on a stone cake stand", "From our kitchen to every store.", "50% 50%"],
 ];

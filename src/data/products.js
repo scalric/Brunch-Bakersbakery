@@ -9,6 +9,7 @@ export const CATEGORIES = [
   { name: "Brownies", emoji: "🍫" },
   { name: "Cupcakes", emoji: "🧁" },
   { name: "Savouries", emoji: "🥪" },
+  { name: "Sandwiches", emoji: "🥪" },
   { name: "Pizza", emoji: "🍕" },
   { name: "Croissants", emoji: "🥐" },
   { name: "Cookies", emoji: "🍪" },
@@ -53,4 +54,6 @@ export const PRODUCTS = [
   // New photo products. NOTE: prices and weights are placeholders, edit them here.
   { id: 32, name: "Brownie Box [Box of 12]", price: 850, icon: "🍫", category: "Brownies", image: img("brownie-box") },
   { id: 33, name: "Cheese Pizza [8 inch]", price: 249, icon: "🍕", category: "Pizza", image: img("cheese-pizza") },
+  // NOTE: price is a placeholder, edit it here.
+  { id: 34, name: "Grilled Sandwich", price: 179, icon: "🥪", category: "Sandwiches", image: img("grilled-sandwich") },
 ];

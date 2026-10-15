@@ -29,11 +29,11 @@ export const BENEFITS = [
 // icon: shown on a cocoa panel beside the step. image: optional photo that replaces the panel (base path without
 // size/extension; the page serves -828 and -1280 in avif and webp from /public).
 export const STEPS = [
-  { image: { src: "/franchise/step-enquiry.webp", alt: "A man browsing home listings on a tablet at a table" }, title: "Enquiry", text: "Share your details and the city you want to open in.", icon: "form" },
-  { image: { src: "/franchise/step-discovery.webp", alt: "Two people reviewing documents together across a marble table" }, title: "Discovery discussion", text: "Our team walks you through the model, costs and what to expect.", icon: "chat" },
+  { image: { src: "/franchise/step-enquiry.webp", alt: "A man browsing franchise information on a tablet at a table" }, title: "Enquiry", text: "Share your details and the city you want to open in.", icon: "form" },
+  { image: { src: "/franchise/step-discovery.webp", alt: "A man and a woman reviewing documents together at a marble table" }, title: "Discovery discussion", text: "Our team walks you through the model, costs and what to expect.", icon: "chat" },
   { image: { src: "/franchise/step-location.webp", alt: "A blue map pin standing on a street map" }, title: "Location assessment", text: "We help you evaluate and approve the right shop location.", icon: "pin" },
-  { image: { src: "/franchise/step-agreement.webp", alt: "Two business partners shaking hands in front of a city skyline" }, title: "Agreement & planning", text: "Sign the franchise agreement and complete your onboarding.", icon: "doc" },
-  { image: { src: "/franchise/step-setup.webp", alt: "Isometric view of a bakery cafe with counter, display cabinet and seating" }, title: "Store setup & training", text: "Store fit-out, equipment and hands-on training for you and your team.", icon: "cap" },
+  { image: { src: "/franchise/step-agreement.webp", alt: "Two business partners shaking hands in a high-rise office at sunset" }, title: "Agreement & planning", text: "Sign the franchise agreement and complete your onboarding.", icon: "doc" },
+  { image: { src: "/franchise/step-setup.webp", alt: "Isometric view of a bakery cafe being set up, with staff, a display cabinet and seating" }, title: "Store setup & training", text: "Store fit-out, equipment and hands-on training for you and your team.", icon: "cap" },
   {
     title: "Launch & ongoing support",
     text: "Open with our marketing support, and we stay by your side after.",
@@ -93,8 +93,8 @@ export const WHY_STATS = [
 // Four image cards under the figures. `pos` is the CSS object-position crop. Wording is descriptive only:
 // no awards, rankings or reviews are claimed.
 export const WHY_HIGHLIGHTS = [
-  { img: donuts, pos: "50% 40%", title: "Crafted to delight", text: "Rich, indulgent bakes made with care, from chocolate-glazed treats to everyday favourites." },
-  { img: croissant, pos: "50% 45%", title: "Baked fresh, every day", text: "Flaky, golden pastries and a menu built around freshness and quality." },
-  { img: chefDessert, pos: "55% 50%", title: "Built by skilled hands", text: "A bakery run on craft and consistency, so every outlet delivers the same taste." },
-  { img: storefront, pos: "50% 38%", title: "Ready for your city", text: "A warm, modern pure veg bakery format designed to feel welcoming from day one." },
+  { img: donuts, pos: "50% 50%", title: "Crafted to delight", text: "Rich, indulgent bakes made with care, from chocolate-glazed treats to everyday favourites." },
+  { img: croissant, pos: "50% 50%", title: "Baked fresh, every day", text: "Flaky, golden pastries and a menu built around freshness and quality." },
+  { img: chefDessert, pos: "50% 50%", title: "Built by skilled hands", text: "A bakery run on craft and consistency, so every outlet delivers the same taste." },
+  { img: storefront, pos: "50% 50%", title: "Ready for your city", text: "A warm, modern pure veg bakery format designed to feel welcoming from day one." },
 ];
