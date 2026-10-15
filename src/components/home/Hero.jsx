@@ -35,8 +35,8 @@ export default function Hero() {
         <video
           ref={video}
           className="hero-video"
-          src="/hero/baked.mp4"
-          poster="/hero/baked-poster.jpg"
+          src="/hero/baked.mp4?v=2"
+          poster="/hero/baked-poster.jpg?v=2"
           autoPlay={!reduceMotion}
           muted
           loop
