@@ -23,7 +23,7 @@ export default function Hero() {
     <section className="hero is-dark" aria-label="Brunch Bakers">
       <div className="hero-inner">
         <div className="hero-copy">
-          <h1 className="hero-title">Own a Slice<br />of the oven.</h1>
+          <h1 className="hero-title">Own a Slice<br />of the Oven.</h1>
           <div className="hero-ctas">
             <Link className="hero-btn primary" to="/franchise">Become a Franchisee</Link>
             <Link className="hero-btn primary" to="/products">View Menu</Link>
